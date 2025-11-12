@@ -2,6 +2,9 @@
 
 基于 Python Flask 的 Web 版 AI 旅行规划应用，通过大语言模型自动生成个性化旅行计划。
 
+## 项目镜像已上传至阿里云仓库
+## 拉取镜像的指令为：docker pull crpi-resy4ogfdx59rb2d.cn-shanghai.personal.cr.aliyuncs.com/homework3/homework3:v1.0
+
 ## 功能特性
 
 ### 1. 智能行程规划
