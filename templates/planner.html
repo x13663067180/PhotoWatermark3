@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅行规划 - AI 旅行规划师</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://webapi.amap.com/maps?v=2.0&key=8f85f7834fe8f7b4fe058525dae4c054&plugin=AMap.Geocoder"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">🌍 AI 旅行规划师</div>
+        <div class="nav-menu">
+            <span>欢迎，{{ username }}</span>
+            <a href="/logout" class="btn btn-small">退出</a>
+        </div>
+    </nav>
+
+    <div class="planner-container">
+        <aside class="sidebar">
+            <h3>我的计划</h3>
+            <button class="btn btn-primary btn-block" id="newPlanBtn">+ 新建计划</button>
+            <div id="plansList" class="plans-list"></div>
+        </aside>
+
+        <main class="main-content">
+            <div id="inputSection" class="input-section">
+                <h2>告诉我你的旅行需求</h2>
+                <div class="voice-input-container">
+                    <textarea id="userInput" placeholder="例如：我想去日本，5天，预算1万元，喜欢美食和动漫，带孩子" rows="4"></textarea>
+                    <div class="input-controls">
+                        <button id="voiceBtn" class="btn btn-voice">🎤 语音输入</button>
+                        <button id="generateBtn" class="btn btn-primary">生成计划</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="planSection" class="plan-section" style="display: none;">
+                <div class="plan-header">
+                    <h2 id="planTitle">旅行计划</h2>
+                    <button id="backBtn" class="btn btn-secondary">返回</button>
+                </div>
+
+                <div class="plan-content">
+                    <div class="map-container">
+                        <div id="map" style="width: 100%; height: 500px; border-radius: 8px;"></div>
+                        <p style="text-align: center; margin-top: 10px; color: #666; font-size: 14px;">
+                            💡 点击地图标记查看详细信息 | 数字标记为景点顺序 | 🏨 为住宿位置
+                        </p>
+                    </div>
+
+                    <div class="plan-details">
+                        <div class="budget-summary" id="budgetSummary"></div>
+                        <div class="itinerary" id="itinerary"></div>
+                        <div class="accommodation" id="accommodation"></div>
+                        <div class="tips" id="tips"></div>
+                    </div>
+
+                    <div class="expense-tracker">
+                        <h3>费用记录</h3>
+                        <form id="expenseForm">
+                            <input type="text" id="expenseCategory" placeholder="类别（如：餐饮）" required>
+                            <input type="number" id="expenseAmount" placeholder="金额" required>
+                            <input type="text" id="expenseDesc" placeholder="描述">
+                            <input type="date" id="expenseDate" required>
+                            <button type="submit" class="btn btn-primary">添加</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
