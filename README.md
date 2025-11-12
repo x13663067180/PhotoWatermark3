@@ -57,16 +57,16 @@ cp .env.example .env
 SECRET_KEY=your-secret-key-here
 
 # AI 服务配置 - 通义千问
-DASHSCOPE_API_KEY=sk-a7dbc3222f0840a0be8ad7ed2f5dc56f
-QWEN_MODEL=qwen3-max
+DASHSCOPE_API_KEY=
+QWEN_MODEL=
 
 # 科大讯飞语音识别（可选）
-XFYUN_APP_ID=8c161bd4
-XFYUN_API_KEY=b8d8a02f316ef42aebf70c7c3637fa0e
-XFYUN_API_SECRET=NWYwOTUxOWI1ZDE2MjdkYWVjMjE2YTZi
+XFYUN_APP_ID=
+XFYUN_API_KEY=
+XFYUN_API_SECRET=
 
 # 高德地图
-AMAP_API_KEY=ec937f50b87c1385e604db578bcd64d5
+AMAP_API_KEY=
 ```
 
 ### 3. 运行应用
