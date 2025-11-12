@@ -1,2 +1,2 @@
 # PhotoWatermark3
-PhotoWatermark2
+PhotoWatermark3
